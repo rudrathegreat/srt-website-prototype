@@ -1,0 +1,197 @@
+/* BASE STYLES ------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black-color: #111;
+    --white-color: white;
+    --red-color: #DA3838;
+    --grey-color: #333;
+    --headline-size: 3.75em;
+    --title-size: 5em;
+    --small-size: 1.25em;
+    --medium-size:2em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--black-color);
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: var(--grey-color);
+    border-radius: 3px;
+}
+
+body {
+    color: var(--white-color);
+    background: var(--black-color);
+    font-family: 'Inter', sans-serif;
+    font-weight:300;
+}
+
+/* TEXT STYLES ------------------------ */
+
+h1 {
+    font-weight: 400;
+    font-size: var(--headline-size);
+    line-height:1;
+}
+
+.headline h1 {
+    width:70%;
+}
+
+.hero h1 {
+    font-weight: 400;
+    font-size: var(--title-size);
+    line-height:1;
+}
+
+/* BUTTON STYLES ------------------------ */
+
+.round-button {
+    text-decoration: none;
+    color: white;
+    font-size: var(--small-size);
+    font-weight: 400;
+    color: var(--black-color);
+    display: inline-block;
+    padding: 2vh 3vw;
+    background: var(--white-color);
+    border-radius: 1000px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.round-button .button-info {
+    display:flex;
+    gap:1vw;
+}
+
+.round-button::before {
+    content:'';
+    position: absolute;
+    background-color: var(--red-color);
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s cubic-bezier(.72,.01,.32,1.01);
+    transform-origin: bottom;
+}
+
+.round-button:hover::before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.3s cubic-bezier(.72,.01,.32,1.01);
+}
+
+.button-text-container, .button-icon-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: var(--small-size);
+}
+
+.button-icon-container .button-icon {
+    height: var(--small-size);
+    padding: 0.25em 0;
+    transition: transform 0.3s ease;
+}
+
+.diagonal .button-icon:nth-child(2) {
+    transform:translate(-1.25em, 0);
+}
+
+.round-button:hover > .button-info .diagonal .button-icon:nth-child(1) {
+    transform:translate(var(--small-size), calc(var(--small-size) * -1));
+    transition: transform 0.3s ease;
+}
+
+.round-button:hover > .button-info .diagonal .button-icon:nth-child(2) {
+    transform:translate(0, calc(var(--small-size) * -1));
+    transition: transform 0.3s ease;
+}
+
+.button-text-container p {
+    transition: transform 0.3s ease-out;
+    transition-delay: 0.05s;
+}
+
+.button-text-container p:nth-child(2) {
+    color: var(--white-color);
+}
+
+.round-button:hover >  .button-info p {
+    transform: translateY(calc(var(--small-size) * -1));
+    transition: transform 0.3s ease-in-out;
+}
+
+.round-button .left .button-icon:nth-child(2) {
+    transform: translate(var(--small-size), calc(var(--small-size) * -1));
+}
+
+.round-button:hover > .button-info .left .button-icon:nth-child(1) {
+    transform:translateX(calc(var(--small-size) * -1));
+    transition: transform 0.3s ease;
+}
+
+.round-button:hover > .button-info .left .button-icon:nth-child(2), .round-button:hover > .button-info .right .button-icon:nth-child(2) {
+    transform:translate(0, calc(var(--small-size) * -1));
+    transition: transform 0.3s ease;
+}
+
+.round-button .right .button-icon:nth-child(2) {
+    transform: translate(calc(var(--small-size) * -1), calc(var(--small-size) * -1));
+}
+
+.round-button:hover > .button-info .right .button-icon:nth-child(1) {
+    transform:translateX(var(--small-size));
+    transition: transform 0.3s ease;
+}
+
+.subtitle {
+    font-weight: 300;
+    font-size: var(--medium-size);
+    width:20%;
+    line-height:1;
+}
+
+.headline {
+    width: 100%;
+    padding: 5vh 2.5vw;
+    border-bottom: 2px solid var(--grey-color);
+    display: flex;
+}
+
+.subtitle-container {
+    display: flex;
+    padding-left:2.5vw;
+    margin-top:3vh;
+}
+
+.subtitle-container .dot {
+    margin-top: 1vh;
+}
+
+.dot {
+    width: 0.75em;
+    height: 0.75em;
+    margin-top: 3vh;
+    margin-right: 2vw;
+    border-radius: 100%;
+    background-color: var(--red-color);
+}
