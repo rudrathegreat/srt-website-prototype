@@ -1,0 +1,23 @@
+.navbar {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:3;
+    background:var(--black-color);
+    border-bottom:2px solid var(--grey-color);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5vw;
+    height:10vh;
+    position:relative;
+}
+
+.navbar > .round-button {
+    padding: 1.5vh 1.5vw;
+}
+
+.navbar img {
+    height:80%;
+}

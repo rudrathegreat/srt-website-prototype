@@ -10,11 +10,12 @@
     --black-color: #111;
     --white-color: white;
     --red-color: #DA3838;
-    --grey-color: #333;
-    --headline-size: 3.75em;
-    --title-size: 5em;
+    --grey-color: var(--dark-grey-color);
+    --dark-grey-color: #222;
+    --headline-size: 4em;
+    --title-size: 5.75em;
     --small-size: 1.25em;
-    --medium-size:2em;
+    --medium-size:2.25em;
 }
 
 html {
@@ -22,14 +23,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    background: var(--black-color);
-}
-
-::-webkit-scrollbar-thumb {
-    width: 10px;
-    background: var(--grey-color);
-    border-radius: 3px;
+    width: 0;
 }
 
 body {
@@ -39,16 +33,55 @@ body {
     font-weight:300;
 }
 
+.cursor {
+    width:1vw;
+    height:1vw;
+    background: var(--red-color);
+    border-radius:1000px;
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:0;
+    transform:translate(-50%, -50%);
+    pointer-events: none;
+    transition:opacity 0.2s ease-in-out, background 0.2s ease-out, width 0.3s ease, height 0.3s ease;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+html.lenis {
+    height: auto;
+  }
+  
+.lenis.lenis-smooth {
+scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+overflow: hidden;
+}
+
 /* TEXT STYLES ------------------------ */
 
 h1 {
     font-weight: 400;
     font-size: var(--headline-size);
     line-height:1;
+    letter-spacing: -2px;
 }
 
 .headline h1 {
-    width:70%;
+    width:75%;
 }
 
 .hero h1 {
@@ -56,6 +89,10 @@ h1 {
     font-size: var(--title-size);
     line-height:1;
 }
+
+ p {
+    letter-spacing: -1px;
+ }
 
 /* BUTTON STYLES ------------------------ */
 
@@ -192,8 +229,8 @@ h1 {
 .subtitle {
     font-weight: 300;
     font-size: var(--medium-size);
-    width:20%;
     line-height:1;
+    width: 20vw;
 }
 
 .headline {
@@ -203,10 +240,12 @@ h1 {
     display: flex;
 }
 
+.hero .headline {
+    padding-top:20vh;
+}
+
 .subtitle-container {
     display: flex;
-    padding-left:2.5vw;
-    margin-top:3vh;
 }
 
 .subtitle-container .dot {
@@ -214,8 +253,8 @@ h1 {
 }
 
 .dot {
-    width: 0.75em;
-    height: 0.75em;
+    width: 0.75vw;
+    height: 0.75vw;
     margin-top: 3vh;
     margin-right: 2vw;
     border-radius: 100%;
@@ -226,4 +265,51 @@ h1 {
 .headline:hover > .dot {
     transform: scale(1.5);
     transition: transform 0.3s cubic-bezier(.72,.01,.32,1.01);
+}
+
+.interactives {
+    display: flex;
+    gap: 1vw;
+    padding: 3vh 2.5vw;
+}
+
+.interactives .slideshow, .video {
+    width:40vw;
+    height:40vh;
+    background: var(--dark-grey-color);
+    border-radius:1.5vw;
+    position:relative;
+}
+
+.slideshow .controls {
+    position: absolute;
+    bottom: 1.5vh;
+    left:0;
+    width:100%;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tile {
+    background: var(--dark-grey-color);
+    border-radius:100%;
+    box-sizing: border-box;
+    margin:7.5px;
+    width:5px;
+    height: 5px;
+    transition:transform 0.3s ease;
+}
+
+.dot-lattice {
+    height:20vh;
+    width:25%;
+}
+
+.dot-effect-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
 }
