@@ -57,7 +57,7 @@ body {
 
 html.lenis {
     height: auto;
-  }
+}
   
 .lenis.lenis-smooth {
 scroll-behavior: auto;
@@ -312,4 +312,28 @@ h1 {
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
+}
+
+@media (pointer:none), (pointer:coarse) {
+    .cursor {
+        display:none;
+    }
+
+    .dot-lattice {
+        display:none;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    :root {
+        --black-color: #111;
+        --white-color: white;
+        --red-color: #DA3838;
+        --grey-color: var(--dark-grey-color);
+        --dark-grey-color: #222;
+        --headline-size: 3em;
+        --title-size: 4em;
+        --small-size: 0.75em;
+        --medium-size:1.5em;
+    }
 }
