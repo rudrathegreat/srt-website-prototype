@@ -49,6 +49,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    display:none;
 }
 
 .lenis.lenis-stopped {
@@ -275,10 +276,11 @@ h1 {
 
 .interactives .slideshow, .video {
     width:40vw;
-    height:40vh;
+    height:45vh;
     background: var(--dark-grey-color);
     border-radius:1.5vw;
     position:relative;
+    overflow:hidden;
 }
 
 .slideshow .controls {
@@ -314,6 +316,66 @@ h1 {
     grid-template-rows: repeat(var(--rows), 1fr);
 }
 
+.hero .slideshow .indicator {
+    display:flex;
+    gap:1vw;
+    position:absolute;
+    top:2vh;
+    left:1vw;
+    z-index:3;
+}
+
+.hero .slideshow .indicator-dot {
+    width:1vw;
+    height:1vw;
+    background:white;
+    border-radius:100%;
+    transition: background 0.3s ease;
+}
+
+.hero .slideshow .red-indicator {
+    background:var(--red-color);
+    transition: background 0.3s ease;
+}
+
+.slideshow .activated {
+    background:var(--red-color);
+    transition: background 0.3s ease;
+}
+
+.slideshow .image-container {
+    width:300%;
+    height:100%;
+    display:flex;
+}
+
+.slideshow .image {
+    width:calc(300% / 3);
+    height:100%;
+    transition:transform 1s cubic-bezier(.2,.69,.39,1), background-position 1s cubic-bezier(.2,.69,.39,1);
+}
+
+.image-container .image:nth-child(1) {
+    background:url('slideshow-img-1.jpg');
+    background-size:120%;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+.image-container .image:nth-child(2) {
+    background:url('slideshow-img-2.jpg');
+    background-size:120%;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+.image-container .image:nth-child(3) {
+    background:url('slideshow-img-3.jpg');
+    background-size:120%;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
 @media (pointer:none), (pointer:coarse) {
     .cursor {
         display:none;
@@ -326,11 +388,6 @@ h1 {
 
 @media screen and (max-width:1000px) {
     :root {
-        --black-color: #111;
-        --white-color: white;
-        --red-color: #DA3838;
-        --grey-color: var(--dark-grey-color);
-        --dark-grey-color: #222;
         --headline-size: 3em;
         --title-size: 4em;
         --small-size: 0.75em;

@@ -234,15 +234,17 @@
                 </div>
                 <div class="slideshow">
                     <div class="indicator">
-                        <div class="indicator-dot"></div>
-                        <div class="indicator-dot"></div>
-                        <div class="indicator-dot"></div>
+                        <div class="indicator-dot red-indicator" onclick="setNumber(0);"></div>
+                        <div class="indicator-dot" onclick="setNumber(1);"></div>
+                        <div class="indicator-dot" onclick="setNumber(2);"></div>
                     </div>
-                    <div class="image"></div>
-                    <div class="image"></div>
-                    <div class="image"></div>
+                    <div class="image-container">
+                        <div class="image"></div>
+                        <div class="image"></div>
+                        <div class="image"></div>
+                    </div>
                     <div class="controls">
-                        <a href="" class="round-button">
+                        <a onclick="previousImage();" class="round-button .previous-button">
                             <div class="button-info">
                                 <div class="button-icon-container left">
                                     <img class="button-icon" src="left-icon-black.svg" alt="">
@@ -254,7 +256,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="" class="round-button">
+                        <a onclick="nextImage();" class="round-button next-button">
                             <div class="button-info">
                                 <div class="button-icon-container right">
                                     <img class="button-icon" src="right-icon-black.svg" alt="">
@@ -563,5 +565,6 @@
     <script src="generateGrid.js" type="text/javascript"></script>
     <script src="cursor.js" type="text/javascript"></script>
     <script src="navbar.js"></script>
+    <script src="slideshow.js"></script>
 </body>
 </html>
