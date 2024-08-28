@@ -1,0 +1,47 @@
+.members-info {
+    background:var(--red-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.members-info h2 {
+    font-size: var(--headline-size);
+    font-weight:300;
+    padding-top:2vh;
+    padding-left: 1.5vw;
+}
+
+.members-info p {
+    padding-top:2vh;
+    padding-bottom:3vh;
+    padding-left:1.5vw;
+    border-top:2px solid rgba(255,255,255,0.3);
+    font-size: var(--medium-size);
+}
+
+.team-stats {
+    background:white;
+    width:50vw;
+}
+
+.vision-and-mission .subtitle-container {
+    width:100%;
+    padding-bottom:3vh;
+    padding-left:3vw;
+    padding-top:5vh;
+    border-bottom:2px solid var(--dark-grey-color);
+}
+
+.exploration {
+    width:94%;
+    margin-left:3vw;
+    margin-top:3vh;
+    padding:5vh 3vw;
+    height:70vh;
+    background:url('exploration-img.jpg');
+    background-position:50% 50%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius:1.5vw;
+}

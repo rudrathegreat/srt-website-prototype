@@ -15,7 +15,7 @@
     --headline-size: 4em;
     --title-size: 5.75em;
     --small-size: 1.25em;
-    --medium-size:2.25em;
+    --medium-size:2em;
 }
 
 html {
@@ -393,4 +393,11 @@ h1 {
         --small-size: 0.75em;
         --medium-size:1.5em;
     }
+}
+
+.hero-card {
+    width:25vw;
+    height:40vh;
+    background:var(--dark-grey-color);
+    border-radius:1.5vw;
 }
