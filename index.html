@@ -377,10 +377,10 @@
                 <div class="sidebar">
                     <div class="tag">
                         <div class="dot"></div>
-                        <p>Featured</p>
+                        <div class="tag-text"><p>Featured</p></div>
                     </div>
                     <div class="controls">
-                        <a href="" class="round-button">
+                        <a onclick="previousSlide();" class="round-button">
                             <div class="button-info">
                                 <div class="button-icon-container left">
                                     <img class="button-icon" src="left-icon-black.svg" alt="">
@@ -392,7 +392,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="" class="round-button">
+                        <a onclick="nextSlide();" class="round-button">
                             <div class="button-info">
                                 <div class="button-icon-container right">
                                     <img class="button-icon" src="right-icon-black.svg" alt="">
@@ -406,30 +406,36 @@
                         </a>
                     </div>
                 </div>
-                <div class="projects-slideshow">
-                    <div class="projects-container">
-                        <div class="project">
-                            <div class="text">
-                                <div class="text-container">
-                                    <p class="subtitle">ARCh Competition 2024</p>
-                                    <h1>Developing the first Swinburne Rover</h1>
+                <div class="projects-container">
+                    <div class="text">
+                        <div class="text-container">
+                            <div class="subtitle"><p>ARCh Competition 2024</p></div>
+                            <div><h1>Developing the first Swinburne Rover</h1></div>
+                        </div>
+                        <a href="" class="round-button">
+                            <div class="button-info">
+                                <div class="button-icon-container diagonal">
+                                    <img class="button-icon" src="link-icon-black.svg" alt="">
+                                    <img class="button-icon" src="link-icon-white.svg" alt="">
                                 </div>
-                                <a href="" class="round-button">
-                                    <div class="button-info">
-                                        <div class="button-icon-container diagonal">
-                                            <img class="button-icon" src="link-icon-black.svg" alt="">
-                                            <img class="button-icon" src="link-icon-white.svg" alt="">
-                                        </div>
-                                        <div class="button-text-container">
-                                            <p class="button-text">View Project</p>
-                                            <p class="button-text">View Project</p>
-                                        </div>
-                                    </div>
-                                </a>
+                                <div class="button-text-container">
+                                    <p class="button-text">View Project</p>
+                                    <p class="button-text">View Project</p>
+                                </div>
                             </div>
+                        </a>
+                    </div>
+                    <div class="projects-container">
+                        <div class="project active">
                             <div class="images">
                                 <img src="project-1-1.jpg" alt="" class="wide-image">
                                 <img src="project-1-2.jpg" alt="" class="vertical-image">
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="images">
+                                <img src="slideshow-img-1.jpg" alt="" class="wide-image">
+                                <img src="slideshow-img-2.jpg" alt="" class="vertical-image">
                             </div>
                         </div>
                     </div>
@@ -570,5 +576,6 @@
     <script src="cursor.js" type="text/javascript"></script>
     <script src="navbar.js"></script>
     <script src="slideshow.js"></script>
+    <script src="projects-slideshow.js"></script>
 </body>
 </html>

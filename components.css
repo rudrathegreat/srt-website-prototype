@@ -407,16 +407,18 @@ h1 {
 
 .projects-slideshow {
     display:flex;
-    gap:1vw;
+    gap:2vw;
     padding:0 3vw;
     width:100%;
 }
 
 .projects-container {
     position:relative;
+    height:90vh;
+    width:80vw;
 }
 
-.project .text {
+.projects-container .text {
     display:flex;
     width:100%;
     justify-content: space-between;
@@ -432,6 +434,9 @@ h1 {
     height:70vh;
     object-fit: cover;
     border-radius: 1vw;
+    opacity: 0;
+    transform: translateY(5vh);
+    transition: opacity 0.3s ease, transform 0.5s ease-in;
 }
 
 .project .wide-image {
@@ -440,6 +445,7 @@ h1 {
 
 .project .vertical-image {
     width:30vw;
+    transition-delay:0.1s;
 }
 
 .project .images {
@@ -449,6 +455,9 @@ h1 {
 
 .project {
     width:80vw;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .projects .controls, .sidebar {
@@ -472,11 +481,34 @@ h1 {
     margin-top:0.5vh;
 }
 
-.project h1 {
+.projects-container h1 {
     font-size:var(--medium-size);
 }
 
-.project .subtitle, .sidebar .tag p {
+.projects-container .subtitle, .sidebar .tag p {
     font-size:var(--small-size);
     margin-bottom:1vh;
+}
+
+.sidebar .tag .tag-text, .projects-container .text-container > div {
+    overflow: hidden;
+}
+
+.sidebar .tag p, .text-container h1, .text-container p {
+    line-height:1.2;
+    transition: transform 0.5s ease;
+}
+
+.text-container h1 {
+    transition-delay:0.1s;
+}
+
+.projects-slideshow .active img {
+    transition: transform 1s cubic-bezier(.2,.69,.39,1), opacity 0.3s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projects-container .active .vertical-image {
+    transition-delay:0.1s;
 }

@@ -3,14 +3,12 @@ let numImages = 3;
 
 function nextImage() {
     slideshow_img_number = slideshow_img_number + 1;
-    console.log('next');
     displayImages();
     setIndicatorColour();
 }
 
 function previousImage() {
     slideshow_img_number = slideshow_img_number - 1;
-    console.log('previous');
     displayImages();
     setIndicatorColour();
 }
@@ -26,7 +24,6 @@ function displayImages() {
     }
     counter = 0;
     transform_amount = slideshow_img_number * -100;
-    console.log('done');
     document.querySelectorAll('.slideshow .image').forEach(image => {
         image.style.transform = 'translateX(' + transform_amount + '%)';
         object_position_amount = 50 - ((slideshow_img_number - counter) * 100);
