@@ -3,6 +3,7 @@ let numSlides = 2;
 let subtitles = ['ARCh Competition 2024', '2025 SRT Team Project'];
 let titles = ['Developing the first Swinburne Rover', 'Building the new Website'];
 let projects_links = ['comingsoon.html', 'comingsoon.html'];
+let tag_titles = ['Featured', 'Latest']
 
 function nextSlide() {
     projects_slide_number = projects_slide_number + 1;
@@ -19,6 +20,7 @@ function previousSlide() {
 function hideText() {
     document.querySelector('.projects-slideshow .text-container h1').style.transform = 'translateY(100%)';
     document.querySelector('.projects-slideshow .text-container p').style.transform = 'translateY(100%)';
+    document.querySelector('.sidebar .tag p').style.transform = 'translateY(100%)';
     document.querySelector('.projects-container .active').classList.remove('active');
 }
 
@@ -40,6 +42,8 @@ function displaySlides() {
             document.querySelector('.projects-slideshow .text-container h1').style.transform = 'translateY(0)';
             document.querySelector('.projects-slideshow .text-container p').style.transform = 'translateY(0)';
             document.querySelector('.projects-slideshow .text .round-button').href = projects_links[counter];
+            document.querySelector('.sidebar .tag p').innerHTML = tag_titles[counter];
+            document.querySelector('.sidebar .tag p').style.transform = 'translateY(0)';
         }
         counter++;
     })
