@@ -218,4 +218,51 @@
     .menu .sub-options {
         margin-top:3vh;
     }
+
+    .navbar > .round-button {
+        padding:1.5vh 3vw;
+    }
+
+    .navbar > .round-button p {
+        line-height:1;
+    }
+
+    .navbar img {
+        height:60%;
+    }
+
+    .navbar .contacts {
+        flex-direction: column;
+    }
+
+    .navbar .extra-links {
+        align-items: flex-end;
+        margin-top:2vh;
+    }
+
+    .round-button {
+        padding:2vh 5vw;
+    }
+
+    .menu .categories {
+        padding-top:4vh;
+        padding-bottom:3vh;
+    }
+
+    .menu .sub-options {
+        height:67%;
+    }
+
+    .menu .sub-options > div {
+        width: calc(100% - 6vw);
+        gap:3vh;
+    }
+
+    .menu .sub-options div .nav-card .image {
+        border-radius:3vw;
+    }
+
+    .menu .sub-options > div > .round-button {
+        bottom:1.5vh;
+    }
 }

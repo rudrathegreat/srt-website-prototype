@@ -502,10 +502,19 @@ h1 {
 
 @media screen and (max-width:1000px) {
     :root {
-        --headline-size: 2em;
+        --headline-size: 2.5em;
         --title-size: 3em;
         --small-size: 1em;
         --medium-size:1.5em;
+    }
+
+    .headline .dot, .hero .subtitle-container .dot, .projects-slideshow .sidebar .tag .dot {
+        width:2vw;
+        height:2vw;
+    }
+
+    .headline .dot {
+        margin-top:1.5vh;
     }
 
     .hero .interactives {
@@ -576,8 +585,9 @@ h1 {
         margin-top:3vh;
     }
 
-    .projects-slideshow .sidebar .tag {
+    .projects-slideshow .sidebar .tag, .projects-slideshow .sidebar .controls {
         margin-top:0;
+        gap:2vw;
     }
 
     .projects-container .text .text-container h1, .projects-container .text .text-container .subtitle {
@@ -599,5 +609,9 @@ h1 {
 
     .projects-container {
         height:50vh;
+    }
+
+    .headline h1 {
+        width:100%;
     }
 }
